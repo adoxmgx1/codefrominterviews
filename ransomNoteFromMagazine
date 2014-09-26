@@ -1,0 +1,42 @@
+//This was done on coderpad.io for an interview with another company two days ago. Implement isViable, whether or not you can create a ransom note from a magazine by cutting out the letters. 
+
+public static boolean isViable(String note, String magazine) {
+    // fill
+    //only ascii 256 chars
+    int[] magazineLetters = new int[256];
+    int[] noteLetters = new int[256];
+    
+    //note not empty
+    //magazine not empty
+    //check magazine.length >= note.length
+    int magazineLength = magazine.length();
+    int noteLength = note.length();
+    
+    if(magazine.length() < note.length()) return false;
+    
+    //go through each character in string, add 1 to appropriate index in noteletters
+    
+    for(int i = 0;i < noteLength; i ++) {  
+      char noteChar = note.charAt(i);  
+      noteLetters[lettersToAscii(noteChar)] += 1;
+      
+      magazineLetters[letters] -=1;
+    }
+    
+    for(int i = 0;i < magazineLength; i ++) {  
+      char magazineChar = note.charAt(i);  
+      magazineLetters[lettersToAscii(magazineChar)] += 1;
+    }
+    
+    for(int i = 0; i < 256; i ++) {
+      if(magazineLetters[i] < noteLetters[i]) return false;
+    
+    }
+    
+    return true;
+    
+}
+
+public int letterToAscii(char c) {  
+       //assume exists
+}
